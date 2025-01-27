@@ -4,7 +4,7 @@
         <div style="    width: 100%;
     display: flex
 ;
-    align-items: center;
+    align-items: center; z-index: 100;
     justify-content: space-between;">
             <a href="{{ url('/') }}">
                 <img src="{{ asset('images/logo.png') }}" alt="موقع سيارات" style="height: 50px;">
