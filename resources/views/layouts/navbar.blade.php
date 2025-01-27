@@ -1,10 +1,10 @@
-<nav style="padding:10px 0;">
+<nav style="padding:10px 0; z-index: 100;">
     <div class="container" style="    flex-direction: column;
     width: 100%;">
         <div style="    width: 100%;
     display: flex
 ;
-    align-items: center; z-index: 100;
+    align-items: center;
     justify-content: space-between;">
             <a href="{{ url('/') }}">
                 <img src="{{ asset('images/logo.png') }}" alt="موقع سيارات" style="height: 50px;">
