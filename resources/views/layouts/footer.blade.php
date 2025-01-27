@@ -19,9 +19,9 @@
 					<div class="ftco-footer-widget mb-4 ml-md-5">
 						<h2 class="ftco-heading-2">المعلومات</h2>
 						<ul class="list-unstyled m-0">
-							<li><a href="#" class="py-2 d-block">جميع السيارات</a></li>
-							<li><a href="#" class="py-2 d-block">التصنيفات</a></li>
-							<li><a href="#" class="py-2 d-block">تواصل معنا</a></li>
+						                <li class="nav-item"><a href="{{ url('/') }}" class="nav-link">جميع السيارات</a></li>
+                <li class="nav-item"><a href="{{ url('pricing') }}" class="nav-link">التصنيفات</a></li>
+                <li class="nav-item"><a href="{{ url('contact') }}" class="nav-link">تواصل معنا</a></li>
 						</ul>
 					</div>
 					</div>
