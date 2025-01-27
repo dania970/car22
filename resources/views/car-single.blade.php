@@ -114,7 +114,12 @@
                 <div class="col-md-4">
                     <div class="car-wrap rounded ftco-animate">
                         <!-- عرض صورة السيارة المرتبطة -->
+                      
+                      
                         <div class="img rounded d-flex align-items-end" style="background-image: url('{{ asset('storage/' . $relatedCar->images->first()->image_path) }}');">
+                            @php
+                        
+                            @endphp
                         </div>
                         <div class="text">
                             <h2 class="mb-0"><a href="{{ route('car-singles.show', $relatedCar->id) }}">{{ $relatedCar->name }}</a></h2>

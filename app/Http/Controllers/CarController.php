@@ -29,6 +29,7 @@ class CarController extends Controller
         // Fetch related cars that belong to the same brand and exclude the current car
         $relatedCars = Car::where('brand_id', $carSingle->brand_id)
                           ->where('id', '!=', $id)
+                          ->with('images')
                           ->get();
         // dd($carSingle->images);
         // Return the view with the car details and related cars
