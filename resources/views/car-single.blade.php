@@ -70,17 +70,17 @@
         <div class="car-dee" style="display: flex; justify-content: space-between; gap: 20px;">
             <div class="w-100" style="width: 70%;height: 400px;">
                 <div class="car-details">
-                    <!-- عرض الصور المتعددة -->
-                    @if($carSingle->images->count())
-                        <div class="img rounded" id="car-image" style="background-image: url('{{ asset('storage/' . $carSingle->images->first()->image_path) }}'); height: 300px; background-size: cover;">
-                        </div>
-                        <div class="image-navigation mt-3 text-center">
-                            <button id="prev-image" style="background-color: #ddd; padding: 8px 15px; border: none; border-radius: 5px;">&#60;</button>
-                            <button id="next-image" style="background-color: #ddd; padding: 8px 15px; border: none; border-radius: 5px;">&#62;</button>
-                        </div>
-                    @else
-                        <div class="img rounded" style="background-image: url('{{ asset('images/default.jpg') }}'); height: 300px; background-size: cover;"></div>
-                    @endif
+                  @if($carSingle->images->isNotEmpty() && $carSingle->images->first())
+    <div class="img rounded" id="car-image" style="background-image: url('{{ asset('storage/' . $carSingle->images->first()->image_path) }}'); height: 300px; background-size: cover;">
+    </div>
+    <div class="image-navigation mt-3 text-center">
+        <button id="prev-image" style="background-color: #ddd; padding: 8px 15px; border: none; border-radius: 5px;">&#60;</button>
+        <button id="next-image" style="background-color: #ddd; padding: 8px 15px; border: none; border-radius: 5px;">&#62;</button>
+    </div>
+@else
+    <div class="img rounded" style="background-image: url('{{ asset('images/default.jpg') }}'); height: 300px; background-size: cover;"></div>
+@endif
+
                 </div>
             </div>
             <div class="car-info w-100" style="width: 30%;height: 300px;">
@@ -116,7 +116,9 @@
                         <!-- عرض صورة السيارة المرتبطة -->
                       
                       
-                        <div class="img rounded d-flex align-items-end" style="background-image: url('{{ asset('storage/' . $relatedCar->images->first()->image_path) }}');">
+<div class="img rounded d-flex align-items-end" 
+     style="background-image: url('{{ $relatedCar->images->isNotEmpty() && $relatedCar->images->first() ? asset('storage/' . $relatedCar->images->first()->image_path) : asset('images/default.jpg') }}');">
+</div>
                             @php
                         
                             @endphp
