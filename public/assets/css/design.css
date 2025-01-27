@@ -1,0 +1,49 @@
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 40;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    animation: hide 400ms ease 2500ms forwards;
+}
+
+.loader img:nth-child(2) {
+    width: 80px;
+    margin-left: 25px;
+    transform: translateY(-20px);
+}
+
+@keyframes hide {
+    100% {
+        top: 100%;
+    }
+}
+
+.loaderLogo {
+    opacity: 0;
+    animation: loader 1.5s linear 0s infinite forwards;
+}
+
+.loaderLogo img {
+    width: 150px;
+}
+
+@keyframes loader {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
